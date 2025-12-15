@@ -1,3 +1,6 @@
+# Set a valid user ID
+USER 10001
+
 # Use a supported base image
 FROM python:3.10-slim-bookworm
 
@@ -12,9 +15,6 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -U pip \
     && pip install --no-cache-dir -r /requirements.txt
 
-# Set a valid user ID
-USER 10001
-
 # Set working directory
 WORKDIR /VJ-FILTER-BOT
 
@@ -23,4 +23,5 @@ COPY . .
 
 # Run your bot
 CMD ["python", "bot.py"]
+
 
